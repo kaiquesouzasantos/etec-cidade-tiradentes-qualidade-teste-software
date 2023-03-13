@@ -7,7 +7,7 @@
 #
 ### SOBRE
 
-- Diretório contendo desenvolvimento dos exercícios na disciplina de Qualidade e Testes de Software(WTS) na Etec Cidade Tiradentes em 2023.
+- Diretório contendo desenvolvimento dos exercícios na disciplina de Qualidade e Testes de Software(QTS) na Etec Cidade Tiradentes em 2023.
 - Possui pequenos projetos submetidos como proposta de solução, com o intuito de atender aos requisitos solicitados.
 
 #
@@ -15,7 +15,8 @@
 
 - *Tipos de Teste*: Funcionalidade, Usabilidade, Performance e Seguranca;
 - *Niveis de Teste*: Unitario, Integracao, Interface, Aceitacao e Regressao;
-- *Tecnicas de Teste*: Funcional(Caixa Preta) e Estrutural(Caixa Branca).
+- *Tecnicas de Teste*: Funcional(Caixa Preta) e Estrutural(Caixa Branca);
+- *Tecnicas de Estruturacao de Relatorio*.
 
 #
 ### TECNOLOGIAS
