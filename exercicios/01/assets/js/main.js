@@ -6,7 +6,7 @@ document.addEventListener(
     'mouseover', () => {
         let usuario = retornaUsuario()
 
-        if(!validacao(usuario.cpf, usuario.rendimentos))
+        if(!validacao(usuario))
             window.location.href = 'http://127.0.0.1:5500/index.html'
         else
             carregaInformacoesUsuario(usuario)

@@ -1,5 +1,5 @@
-export function validacao(cpf, rendimentos){
-	return validaCPF(cpf) && validaRendimentos(rendimentos)
+export function validacao({nome, cpf, rendimentos}){
+	return validaCPF(cpf) && validaPreenchimento(nome, cpf, rendimentos) && validaRendimentos(rendimentos) && validaNumero(rendimentos)
 
 }
 
@@ -43,6 +43,16 @@ function validaCPF(cpf) {
 		return false
 }
 
+function validaPreenchimento(nome, cpf, rendimentos){
+	if(nome == null || cpf == null || rendimentos == null)
+		return false
+	return true
+}
+
 function validaRendimentos(rendimentos){
 	return rendimentos >= 0
+}
+
+function validaNumero(numero){
+	return new RegExp('^[0-9]+$').test(numero)
 }
