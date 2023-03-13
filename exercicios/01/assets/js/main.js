@@ -1,12 +1,12 @@
 import { retornaUsuario } from './functionsHTTP.js'
-import { validacao } from './functionsValidacao.js'
+import { Validacao } from './validacao.js'
 import { Usuario } from './usuario.js'
 
 document.addEventListener(
     'mouseover', () => {
         let usuario = retornaUsuario()
 
-        if(!validacao(usuario))
+        if(!new Validacao(usuario))
             window.location.href = 'http://127.0.0.1:5500/index.html'
         else
             carregaInformacoesUsuario(usuario)
