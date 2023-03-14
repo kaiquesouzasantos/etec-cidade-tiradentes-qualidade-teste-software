@@ -17,7 +17,7 @@ export class Usuario {
         } else if(this.rendimentos >= 45012.61 && this.rendimentos <= 55976.16){
             return 22.5
         } else {
-            return 22.7
+            return 27.5
         }
     }
 
