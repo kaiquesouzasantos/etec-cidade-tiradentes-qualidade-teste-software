@@ -1,18 +1,16 @@
-import { Requester } from '../components/requester.js'
+import { Requester } from "../components/requester.js";
 
 export class ControllerUsuario {
-    static retornaUsuario() {
-        let usuario = Requester.retornaUsuarioViaURL()
+    static async retornaUsuario() {
+        let usuario = await Requester.retornaUsuarioViaURL()
 
-        try {
-            carregaInformacoesUsuario(usuario)
-        } catch(e){
-            console.log(usuario)
-            // window.location.href = 'http://127.0.0.1:5500/index.html'
-        }   
+        if(usuario.aliquota != null)
+            this.carregaInformacoesUsuario(usuario)
+        else 
+            window.location.href = 'http://127.0.0.1:5500/index.html'
     }
 
-    carregaInformacoesUsuario(usuario) {
+    async carregaInformacoesUsuario(usuario) {
         try {
             document.getElementById('txtNome').value = usuario.nome
             document.getElementById('txtCPF').value = usuario.cpf

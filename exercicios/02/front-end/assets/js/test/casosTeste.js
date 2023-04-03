@@ -1,6 +1,6 @@
-import { CasoTeste } from "../model/CasoTeste"
+import { CasoTeste } from "../model/CasoTeste.js"
 
-const CPF_TESTE = 08125461051
+const CPF_TESTE = "08125461051"
 
 export const CASOS_TESTE = [
     new CasoTeste('Teste de campos preenchidos', '', '', ''),

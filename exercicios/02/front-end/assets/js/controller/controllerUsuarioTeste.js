@@ -2,14 +2,19 @@ import { Requester } from '../components/requester.js'
 import { CasoTeste } from '../model/CasoTeste.js'
 import { CASOS_TESTE } from '../test/casosTeste.js'
 
+let CONTADOR = false
+
 export class ControllerTeste {
     static executaTestes() {
-        CASOS_TESTE.forEach(
-            (casoTeste) => carregaInformacoesTeste(casoTeste)
-        )
+        if(!CONTADOR)
+            CASOS_TESTE.forEach(
+                (casoTeste) => ControllerTeste.carregaInformacoesTeste(casoTeste)
+            )
+            
+            CONTADOR = true
     }
 
-    carregaInformacoesTeste(teste) {
+    static carregaInformacoesTeste(teste) {
         const resultadoTeste = this.verificaResultadoTeste(teste)
 
         try {
@@ -17,13 +22,13 @@ export class ControllerTeste {
             '\
             <div class="mb-3 col-4 input-group flex-nowrap">\
                 <span class="input-group-text" id="addon-wrapping">'+resultadoTeste+'</span>\
-                <input type="text" class="form-control" placeholder="'+teste.nome+'" aria-describedby="addon-wrapping" readonly>\
+                <input type="text" class="form-control" placeholder="'+teste.nomeTeste+'" aria-describedby="addon-wrapping" readonly>\
             </div>\
             '
         } catch (e) {}
     }
 
-    verificaResultadoTeste(teste) {
+    static verificaResultadoTeste(teste) {
         const resultadoUsuario = Requester.retornaUsuario(teste.nome, teste.cpf, teste.rendimentos)
         return teste.rendimentosEsperado == resultadoUsuario.rendimentos ? 'Passou' : 'Falhou'
     } 
