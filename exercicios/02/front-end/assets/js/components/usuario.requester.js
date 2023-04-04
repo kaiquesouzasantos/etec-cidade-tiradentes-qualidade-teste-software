@@ -12,8 +12,10 @@ export class Requester {
   }
 
   static async retornaUsuario(nome, rendimentos, cpf) {
-    return await fetch(
+    const response = await fetch(
       `https://server-imposto-renda-production.up.railway.app/?nome=${nome}&rendimentos=${rendimentos}&cpf=${cpf}`
-    ).then(response => response.json())
+    )
+
+    return response.json()
   }
 }

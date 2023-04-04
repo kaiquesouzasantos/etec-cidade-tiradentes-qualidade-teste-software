@@ -1,5 +1,6 @@
 import { Requester } from '../components/usuario.requester.js'
 import { CASOS_TESTE } from '../test/casosTest.list.js'
+import { Pattern } from '../components/usuario.pattern.js'
 
 let CONTADOR = false
 
@@ -13,11 +14,12 @@ export class ControllerTeste {
             CONTADOR = true
     }
 
-    static carregaInformacoesTeste(teste) {
-        if(this.verificaResultadoTeste(teste)) 
+    static async carregaInformacoesTeste(teste) {
+        if(await this.verificaResultadoTeste(teste)) {
             this.exibeInformacoesTeste(teste.nomeTeste, 'Passou', '#149c68')
-        else
+        } else {
             this.exibeInformacoesTeste(teste.nomeTeste, 'Falhou', 'red')
+        }
     }
 
     static exibeInformacoesTeste(nomeTeste, resultado, cor) {
@@ -33,6 +35,8 @@ export class ControllerTeste {
     }
 
     static async verificaResultadoTeste(teste) {
-        return await teste.parcelaEsperada == Requester.retornaUsuario(teste.nome, teste.cpf, teste.rendimentos).parcela
+        const response = await Requester.retornaUsuario(teste.nome, teste.cpf, teste.rendimentos)
+
+        return await teste.aliquotaEsperada == response.aliquota
     } 
 }

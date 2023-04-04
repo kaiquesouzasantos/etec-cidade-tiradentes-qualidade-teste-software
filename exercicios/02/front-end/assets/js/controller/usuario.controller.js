@@ -14,9 +14,9 @@ export class ControllerUsuario {
         try {
             document.getElementById('txtNome').value = usuario.nome
             document.getElementById('txtCPF').value = usuario.cpf
-            document.getElementById('txtRendimentos').value = 'R$'+usuario.rendimentos
-            document.getElementById('txtAliquota').value = usuario.aliquota+'%'
-            document.getElementById('txtParcela').value = 'R$'+usuario.parcela
+            document.getElementById('txtRendimentos').value = usuario.rendimentos
+            document.getElementById('txtAliquota').value = usuario.aliquota
+            document.getElementById('txtParcela').value = usuario.parcela
         } catch (e) {}
     }
 }
