@@ -10,7 +10,7 @@ export class ControllerUsuario {
             window.location.href = 'http://127.0.0.1:5500/index.html'
     }
 
-    async carregaInformacoesUsuario(usuario) {
+    static carregaInformacoesUsuario(usuario) {
         try {
             document.getElementById('txtNome').value = usuario.nome
             document.getElementById('txtCPF').value = usuario.cpf
