@@ -16,7 +16,8 @@
 - *Tipos de Teste*: Funcionalidade, Usabilidade, Performance e Seguranca;
 - *Niveis de Teste*: Unitario, Integracao, Interface, Aceitacao e Regressao;
 - *Tecnicas de Teste*: Funcional(Caixa Preta) e Estrutural(Caixa Branca);
-- *Tecnicas de Estruturacao de Relatorio*.
+- *Tecnicas de Estruturacao de Relatorio*;
+- *Automatizacao de Testes Funcionais*;
 
 #
 ### TECNOLOGIAS
