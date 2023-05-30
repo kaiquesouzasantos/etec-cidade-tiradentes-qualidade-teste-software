@@ -9,8 +9,7 @@ public class AliquotaTest {
 
     private final String PATH_DRIVER = System.getProperty("user.dir") +"\\drivers\\chromedriver.exe";
     private final String NOME_PROPRIEDADE = "webdriver.chrome.driver";
-    private final String SITE1 = "http://etec199-2021-kaiquesouzasantos.epizy.com/7_qts/exercicios/01/index.html";
-    private final String SITE = "http://127.0.0.1:5500/index.html";
+    private final String SITE = "http://etec199-2021-kaiquesouzasantos.epizy.com/7_qts/exercicios/02/index.html";
     private final String NOME = "TESTE", CPF = "51248547829";
 
     @BeforeEach
