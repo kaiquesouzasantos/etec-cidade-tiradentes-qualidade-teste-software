@@ -18,6 +18,12 @@ h1 {
     color: #fff;
     margin-bottom: 5px;
 }
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 h5 {
     text-align: center;

@@ -3,10 +3,9 @@ import { retornaPessoa } from './component/factory.pessoa.js'
 
 document.getElementById('indice').addEventListener('mouseover', () => {
     let pessoa = retornaPessoa()
-    console.log(pessoa)
 
     if(!new Validacao(pessoa).validacao())
-        window.location.href = 'http://127.0.0.1:5500/02%20copy/index.html'
+        window.location.href = 'http://127.0.0.1:5500/04/front-end/index.html'
     else
         carregaInformacoesPessoa(pessoa)
 })

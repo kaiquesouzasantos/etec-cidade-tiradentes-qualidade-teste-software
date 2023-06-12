@@ -6,13 +6,11 @@ export class Validacao {
 	}
 
 	validacao(){
-		return this.validaPreenchimento() && this.validaNumericos() && this.validaIMC()
+		return this.validaPreenchimento() && this.validaNumericos() && this.validaIMC() && this.validaNome() && this.validaNumero()
 	}
 	
 	validaPreenchimento(){
-		if(this.nome == null || this.peso == null || this.altura == null)
-			return false
-		return true
+		return !(this.nome == null || this.peso == null || this.altura == null)
 	}
 	
 	validaNumericos(){
@@ -21,5 +19,15 @@ export class Validacao {
 
 	validaIMC(){
 		return this.peso > this.altura
+	}
+
+	validaNome(){
+		let pattern = /^[a-zA-Z\s]+$/
+		return pattern.test(this.nome) 
+	}
+
+	validaNumero(){
+		let pattern = /^[0-9]+$/
+		return pattern.test(this.peso) && pattern.test(this.altura)
 	}
 }

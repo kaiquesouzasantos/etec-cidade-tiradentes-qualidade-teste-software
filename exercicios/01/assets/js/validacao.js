@@ -6,7 +6,7 @@ export class Validacao {
 	}
 
 	validacao(){
-		return this.validaCPF() && this.validaPreenchimento() && this.validaRendimentos() 
+		return this.validaCPF() && this.validaPreenchimento() && this.validaRendimentos() && this.validaNome() && this.validaNumero()
 	}
 
 	validaCPF() {
@@ -51,12 +51,20 @@ export class Validacao {
 	}
 	
 	validaPreenchimento(){
-		if(this.nome == null || this.cpf == null || this.rendimentos == null)
-			return false
-		return true
+		return !(this.nome == null || this.peso == null || this.altura == null)
 	}
 	
 	validaRendimentos(){
 		return this.rendimentos >= 0
+	}
+
+	validaNome(){
+		let pattern = /^[a-zA-Z\s]+$/
+		return pattern.test(this.nome) 
+	}
+
+	validaNumero(){
+		let pattern = /^[0-9]+$/
+		return pattern.test(this.peso) && pattern.test(this.altura)
 	}
 }

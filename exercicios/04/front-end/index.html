@@ -25,16 +25,16 @@
                 <form method="GET" action="indice.html">
                     <div class="mb-3">
                         <label class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="nome" id="nome" pattern="([aA-zZ]+)" required>
+                        <input type="text" class="form-control" name="nome" id="nome" pattern="[A-Za-z\s]+" required>
                     </div>
                     <div class="row mb-3">
                         <div class="col">
                             <label class="form-label data-form">Peso</label>
-                            <input type="text" class="form-control" name="peso" required>
+                            <input type="text" class="form-control" name="peso" pattern="[0-9]+([.,][0-9]+)?" required>
                         </div>
                         <div class="col">
                             <label class="form-label data-form">Altura</label>
-                            <input type="text" class="form-control" name="altura" required>
+                            <input type="text" class="form-control" name="altura" pattern="[0-9]+([.,][0-9]+)?" required>
                         </div>
                     </div>
 
