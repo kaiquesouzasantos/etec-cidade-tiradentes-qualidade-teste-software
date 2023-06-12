@@ -64,7 +64,7 @@ export class Validacao {
 	}
 
 	validaNumero(){
-		let pattern = /^[0-9]+$/
+		let pattern = /^\d+(\.\d+)?$/
 		return pattern.test(this.peso) && pattern.test(this.altura)
 	}
 }
