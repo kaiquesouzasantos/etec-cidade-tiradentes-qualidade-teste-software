@@ -13,9 +13,10 @@ public class ImcModelTest {
         var expected = ImcUtil.factoryModel();
 
         assertAll(
+                () -> assertNull(new ImcModel().getNome()),
                 () -> assertEquals(expected.getNome(), ImcUtil.NOME),
-                () -> assertEquals(expected.getCpf(), ImcUtil.CPF),
-                () -> assertEquals(expected.getRendimentos(), ImcUtil.RENDIMENTOS)
+                () -> assertEquals(expected.getAltura(), ImcUtil.ALTURA),
+                () -> assertEquals(expected.getPeso(), ImcUtil.PESO)
         );
     }
 
@@ -24,17 +25,17 @@ public class ImcModelTest {
         var expected = ImcUtil.factoryModel();
 
         expected.setNome(ImcUtil.NOME_ALTERNATIVO);
-        expected.setCpf(ImcUtil.CPF_ALTERNATIVO);
-        expected.setRendimentos(ImcUtil.RENDIMENTOS_ALTERNATIVO);
+        expected.setPeso(ImcUtil.PESO_ALTERNATIVO);
+        expected.setAltura(ImcUtil.ALTURA_ALTERNATIVA);
 
         assertAll(
                 () -> assertEquals(expected.getNome(), ImcUtil.NOME_ALTERNATIVO),
-                () -> assertEquals(expected.getCpf(), ImcUtil.CPF_ALTERNATIVO),
-                () -> assertEquals(expected.getRendimentos(), ImcUtil.RENDIMENTOS_ALTERNATIVO),
+                () -> assertEquals(expected.getAltura(), ImcUtil.ALTURA_ALTERNATIVA),
+                () -> assertEquals(expected.getPeso(), ImcUtil.PESO_ALTERNATIVO),
 
                 () -> assertNotEquals(expected.getNome(), ImcUtil.NOME),
-                () -> assertNotEquals(expected.getCpf(), ImcUtil.CPF),
-                () -> assertNotEquals(expected.getRendimentos(), ImcUtil.RENDIMENTOS)
+                () -> assertNotEquals(expected.getPeso(), ImcUtil.PESO),
+                () -> assertNotEquals(expected.getAltura(), ImcUtil.ALTURA)
         );
     }
 }

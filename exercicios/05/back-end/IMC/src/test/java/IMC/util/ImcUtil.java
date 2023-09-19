@@ -4,8 +4,8 @@ import IMC.dto.ImcDto;
 import IMC.model.ImcModel;
 
 public class ImcUtil {
-    public static final String NOME = "TESTE", NOME_ALTERNATIVO = "TESTADO", ESTADO = "";
-    public static final Double ALTURA = 0.0, PESO = 0.0, IMC = 0.0;
+    public static final String NOME = "TESTE", NOME_ALTERNATIVO = "TESTADO", ESTADO = "Peso Normal";
+    public static final Double ALTURA = 2.0, PESO = 90.0, IMC = 22.5, ALTURA_ALTERNATIVA = 1.7, PESO_ALTERNATIVO = 60.0;
 
     public static ImcModel factoryModel() {
         return ImcModel

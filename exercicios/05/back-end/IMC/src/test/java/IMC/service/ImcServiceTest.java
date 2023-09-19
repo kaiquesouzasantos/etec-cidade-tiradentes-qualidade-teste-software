@@ -1,6 +1,5 @@
 package IMC.service;
 
-import IMC.component.rule.ImcRule;
 import IMC.util.ImcUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +15,6 @@ public class ImcServiceTest {
     @Test
     public void save() {
         var expected = service.save(ImcUtil.factoryDto());
-        var imc = ImcRule.getImc(expected.getPeso(), expected.getAltura());
-        var estado = ImcRule.getEstado(imc);
 
         assertAll(
                 () -> assertEquals(expected.getNome(), ImcUtil.NOME),
