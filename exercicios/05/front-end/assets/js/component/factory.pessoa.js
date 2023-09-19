@@ -1,13 +1,16 @@
 import { Pessoa } from '../model/pessoa.model.js'
 
-export function retornaPessoa(){
+export class Requester {
+  static async retornaUsuarioViaURL() {
     const urlParams = new URLSearchParams(window.location.search)
 
-    return constroiPessoa(
-        urlParams.get('nome'), urlParams.get('peso'), urlParams.get('altura')
+    return await this.retornaPessoa(
+        urlParams.get('nome'), urlParams.get('peso'), urlParams.get('altura'))
     )
-}
+  }
 
-function constroiPessoa(nome, peso, altura) {
-    return new Pessoa(nome, peso, altura)
+  static async retornaPessoa(nome, peso, altura) {
+    const url = 'http://localhost:8080/imc';
+    return (await fetch(`${url}?nome=${nome}&peso=${peso}&altura=${altura}`)).json()
+  }
 }
