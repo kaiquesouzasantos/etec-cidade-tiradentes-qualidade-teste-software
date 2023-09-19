@@ -15,7 +15,7 @@ public class AliquotaController {
     private final AliquotaService aliquotaService;
 
     @GetMapping("")
-    public ResponseEntity<AliquotaModel> save(@RequestBody AliquotaDto aliquota) {
+    public ResponseEntity<AliquotaModel> save(AliquotaDto aliquota) {
         return ResponseEntity.status(HttpStatus.CREATED).body(aliquotaService.save(aliquota));
     }
 }
