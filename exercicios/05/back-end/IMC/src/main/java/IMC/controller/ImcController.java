@@ -15,7 +15,7 @@ public class ImcController {
     private final ImcService imcService;
 
     @GetMapping("")
-    public ResponseEntity<ImcModel> save(@RequestBody ImcDto aliquota) {
+    public ResponseEntity<ImcModel> save(ImcDto aliquota) {
         return ResponseEntity.status(HttpStatus.CREATED).body(imcService.save(aliquota));
     }
 }
