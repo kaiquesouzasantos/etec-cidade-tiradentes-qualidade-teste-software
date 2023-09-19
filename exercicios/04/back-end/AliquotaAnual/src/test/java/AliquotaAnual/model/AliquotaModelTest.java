@@ -13,6 +13,7 @@ public class AliquotaModelTest {
         var expected = AliquotaUtil.factoryModel();
 
         assertAll(
+                () -> assertNull(new AliquotaModel().getNome()),
                 () -> assertEquals(expected.getNome(), AliquotaUtil.NOME),
                 () -> assertEquals(expected.getCpf(), AliquotaUtil.CPF),
                 () -> assertEquals(expected.getRendimentos(), AliquotaUtil.RENDIMENTOS)
