@@ -23,7 +23,7 @@ public class BidController {
     }
 
     @GetMapping("/highest")
-    public ResponseEntity<List<BidModel>> save(@RequestParam UUID auction) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(bidService.listHighestBidsByAuction(auction));
+    public ResponseEntity<List<BidModel>> findHighestBids(@RequestParam UUID auction) {
+        return ResponseEntity.status(HttpStatus.OK).body(bidService.listHighestBidsByAuction(auction));
     }
 }

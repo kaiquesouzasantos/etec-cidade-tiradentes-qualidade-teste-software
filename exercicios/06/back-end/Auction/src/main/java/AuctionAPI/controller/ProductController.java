@@ -23,6 +23,6 @@ public class ProductController {
 
     @GetMapping("/all")
     public ResponseEntity<List<ProductModel>> listAll() {
-        return ResponseEntity.status(HttpStatus.CREATED).body(productService.listAll());
+        return ResponseEntity.status(HttpStatus.OK).body(productService.listAll());
     }
 }

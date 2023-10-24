@@ -23,6 +23,6 @@ public class UserController {
 
     @GetMapping("/all")
     public ResponseEntity<List<UserModel>> listAll() {
-        return ResponseEntity.status(HttpStatus.CREATED).body(userService.listAll());
+        return ResponseEntity.status(HttpStatus.OK).body(userService.listAll());
     }
 }

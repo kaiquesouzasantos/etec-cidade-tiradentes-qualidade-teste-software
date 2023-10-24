@@ -25,11 +25,11 @@ public class AuctionController {
 
     @PostMapping("/sale")
     public ResponseEntity<AuctionModel> sale(@RequestBody SaleDto sale) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(auctionService.sale(sale));
+        return ResponseEntity.status(HttpStatus.OK).body(auctionService.sale(sale));
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<AuctionModel>> save() {
-        return ResponseEntity.status(HttpStatus.CREATED).body(auctionService.listAll());
+    public ResponseEntity<List<AuctionModel>> findAll() {
+        return ResponseEntity.status(HttpStatus.OK).body(auctionService.listAll());
     }
 }
