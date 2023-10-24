@@ -1,7 +1,7 @@
 package AliquotaAnual.service;
 
 import AliquotaAnual.component.rule.AliquotaRule;
-import AliquotaAnual.dto.AliquotaDto;
+import AliquotaAnual.dto.AliquotaPostDto;
 import AliquotaAnual.util.AliquotaUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class AliquotaServiceTest {
     public void compartilhamentoEquivalencia() {
         assertAll(
                 () -> assertThrows(
-                        Exception.class, () -> service.save(AliquotaDto.builder().build())
+                        Exception.class, () -> service.save(AliquotaPostDto.builder().build())
                 ),
                 () -> assertThrows(
                         Exception.class, () -> service.save(AliquotaUtil.factoryDto(

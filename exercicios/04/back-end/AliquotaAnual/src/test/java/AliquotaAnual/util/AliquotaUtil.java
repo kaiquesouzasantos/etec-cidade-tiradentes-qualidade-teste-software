@@ -1,6 +1,6 @@
 package AliquotaAnual.util;
 
-import AliquotaAnual.dto.AliquotaDto;
+import AliquotaAnual.dto.AliquotaPostDto;
 import AliquotaAnual.model.AliquotaModel;
 
 public class AliquotaUtil {
@@ -25,8 +25,8 @@ public class AliquotaUtil {
                 .build();
     }
 
-    public static AliquotaDto factoryDto() {
-        return AliquotaDto
+    public static AliquotaPostDto factoryDto() {
+        return AliquotaPostDto
                 .builder()
                 .nome(NOME)
                 .cpf(CPF)
@@ -34,8 +34,8 @@ public class AliquotaUtil {
                 .build();
     }
 
-    public static AliquotaDto factoryDto(Double rendimentos) {
-        return AliquotaDto
+    public static AliquotaPostDto factoryDto(Double rendimentos) {
+        return AliquotaPostDto
                 .builder()
                 .nome(NOME)
                 .cpf(CPF)
@@ -43,8 +43,8 @@ public class AliquotaUtil {
                 .build();
     }
 
-    public static AliquotaDto factoryDto(String nome, String cpf, Double rendimentos) {
-        return AliquotaDto
+    public static AliquotaPostDto factoryDto(String nome, String cpf, Double rendimentos) {
+        return AliquotaPostDto
                 .builder()
                 .nome(nome)
                 .cpf(cpf)
