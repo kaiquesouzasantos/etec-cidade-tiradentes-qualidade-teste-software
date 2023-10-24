@@ -1,6 +1,6 @@
 package IMC.util;
 
-import IMC.dto.ImcDto;
+import IMC.dto.ImcPostDto;
 import IMC.model.ImcModel;
 
 public class ImcUtil {
@@ -27,8 +27,8 @@ public class ImcUtil {
                 .build();
     }
 
-    public static ImcDto factoryDto() {
-        return ImcDto
+    public static ImcPostDto factoryDto() {
+        return ImcPostDto
                 .builder()
                 .nome(NOME)
                 .peso(PESO)
@@ -36,8 +36,8 @@ public class ImcUtil {
                 .build();
     }
 
-    public static ImcDto factoryDto(String nome, Double peso, Double altura) {
-        return ImcDto
+    public static ImcPostDto factoryDto(String nome, Double peso, Double altura) {
+        return ImcPostDto
                 .builder()
                 .nome(nome)
                 .peso(peso)
