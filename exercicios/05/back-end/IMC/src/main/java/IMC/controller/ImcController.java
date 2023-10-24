@@ -19,13 +19,13 @@ public class ImcController {
     private final ImcService imcService;
 
     @PostMapping("")
-    public ResponseEntity<ImcModel> save(ImcPostDto aliquota) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(imcService.save(aliquota));
+    public ResponseEntity<ImcModel> save(ImcPostDto imc) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(imcService.save(imc));
     }
 
     @PutMapping("")
-    public ResponseEntity<ImcModel> update(ImcPutDto aliquota) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(imcService.update(aliquota));
+    public ResponseEntity<ImcModel> update(ImcPutDto imc) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(imcService.update(imc));
     }
 
     @DeleteMapping("")
