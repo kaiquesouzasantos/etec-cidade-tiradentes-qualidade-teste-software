@@ -1,14 +1,15 @@
 package IMC.dto;
 
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.util.UUID;
 
 @Data
-@Builder
+@NoArgsConstructor
+@SuperBuilder
 public class ImcPutDto {
     private UUID id;
-    private String nome;
     private Double peso, altura;
 }

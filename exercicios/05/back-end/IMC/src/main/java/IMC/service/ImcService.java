@@ -37,7 +37,7 @@ public class ImcService implements Validation<ImcPostDto, ImcPutDto> {
         validatedPut(imc);
 
         return imcRepository.save(
-                ImcRule.calculated(ImcMapper.toMapper(imc))
+                ImcRule.calculated(ImcMapper.toMapper(imc, findById(imc.getId())))
         );
     }
 
@@ -72,11 +72,8 @@ public class ImcService implements Validation<ImcPostDto, ImcPutDto> {
     public boolean validatePut(ImcPutDto value) {
         return Stream.of(
                 imcValidation.isValid(value.getId()),
-                NotNull.isValid(value.getNome()),
                 NotNull.isValid(value.getPeso()),
                 NotNull.isValid(value.getAltura()),
-                NotEmpty.isValid(value.getNome()),
-                StringValidation.isValid(value.getNome()),
                 PositiveOrZero.isValid(value.getPeso()),
                 PositiveOrZero.isValid(value.getAltura()),
                 PesoSuperiorAltura.isValid(value.getPeso(), value.getAltura())

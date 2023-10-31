@@ -25,7 +25,7 @@ public class ImcController {
 
     @PutMapping("")
     public ResponseEntity<ImcModel> update(@RequestBody ImcPutDto imc) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(imcService.update(imc));
+        return ResponseEntity.status(HttpStatus.OK).body(imcService.update(imc));
     }
 
     @DeleteMapping("")

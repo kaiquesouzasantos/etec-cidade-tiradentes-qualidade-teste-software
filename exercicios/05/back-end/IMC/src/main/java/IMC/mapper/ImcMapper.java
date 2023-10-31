@@ -13,8 +13,7 @@ public class ImcMapper {
         return objetoSaida;
     }
 
-    public static ImcModel toMapper(ImcPutDto objetoEntrada) {
-        ImcModel objetoSaida = new ImcModel();
+    public static ImcModel toMapper(ImcPutDto objetoEntrada, ImcModel objetoSaida) {
         BeanUtils.copyProperties(objetoEntrada, objetoSaida);
 
         return objetoSaida;
