@@ -35,7 +35,7 @@ public class AliquotaService implements Validation<AliquotaPostDto, AliquotaPutD
         validatedPut(aliquota);
 
         return aliquotaRepository.save(
-                AliquotaRule.calculated(AliquotaMapper.toMapper(aliquota))
+                AliquotaRule.calculated(AliquotaMapper.toMapper(aliquota, findById(aliquota.getId())))
         );
     }
 
@@ -76,14 +76,8 @@ public class AliquotaService implements Validation<AliquotaPostDto, AliquotaPutD
     @Override
     public boolean validatePut(AliquotaPutDto value) {
         return Stream.of(
-                NotNull.isValid(value.getNome()),
                 NotNull.isValid(value.getRendimentos()),
-                NotNull.isValid(value.getCpf()),
-                NotEmpty.isValid(value.getNome()),
-                NotEmpty.isValid(value.getCpf()),
-                StringValidation.isValid(value.getNome()),
-                PositiveOrZero.isValid(value.getRendimentos()),
-                CPFValidation.isValid(value.getCpf())
+                PositiveOrZero.isValid(value.getRendimentos())
         ).allMatch(valor -> valor.equals(true));
     }
 

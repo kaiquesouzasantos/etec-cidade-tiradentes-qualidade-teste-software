@@ -1,15 +1,15 @@
 package AliquotaAnual.dto;
 
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.util.UUID;
 
 @Data
-@Builder
+@NoArgsConstructor
+@SuperBuilder
 public class AliquotaPutDto {
     private UUID id;
-    private String nome;
     private Double rendimentos;
-    private String cpf;
 }

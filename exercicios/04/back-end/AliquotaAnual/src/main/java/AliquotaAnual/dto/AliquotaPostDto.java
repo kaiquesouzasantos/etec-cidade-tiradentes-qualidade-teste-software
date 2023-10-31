@@ -1,10 +1,12 @@
 package AliquotaAnual.dto;
 
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
-@Builder
+@NoArgsConstructor
+@SuperBuilder
 public class AliquotaPostDto {
     private String nome;
     private Double rendimentos;

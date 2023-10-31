@@ -13,8 +13,7 @@ public class AliquotaMapper {
         return objetoSaida;
     }
 
-    public static AliquotaModel toMapper(AliquotaPutDto objetoEntrada) {
-        AliquotaModel objetoSaida = new AliquotaModel();
+    public static AliquotaModel toMapper(AliquotaPutDto objetoEntrada, AliquotaModel objetoSaida) {
         BeanUtils.copyProperties(objetoEntrada, objetoSaida);
 
         return objetoSaida;

@@ -19,12 +19,12 @@ public class AliquotaController {
     private final AliquotaService aliquotaService;
 
     @PostMapping("")
-    public ResponseEntity<AliquotaModel> save(AliquotaPostDto aliquota) {
+    public ResponseEntity<AliquotaModel> save(@RequestBody AliquotaPostDto aliquota) {
         return ResponseEntity.status(HttpStatus.CREATED).body(aliquotaService.save(aliquota));
     }
 
     @PutMapping("")
-    public ResponseEntity<AliquotaModel> update(AliquotaPutDto aliquota) {
+    public ResponseEntity<AliquotaModel> update(@RequestBody AliquotaPutDto aliquota) {
         return ResponseEntity.status(HttpStatus.CREATED).body(aliquotaService.update(aliquota));
     }
 
