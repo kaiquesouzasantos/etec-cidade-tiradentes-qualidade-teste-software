@@ -19,12 +19,12 @@ public class ImcController {
     private final ImcService imcService;
 
     @PostMapping("")
-    public ResponseEntity<ImcModel> save(ImcPostDto imc) {
+    public ResponseEntity<ImcModel> save(@RequestBody ImcPostDto imc) {
         return ResponseEntity.status(HttpStatus.CREATED).body(imcService.save(imc));
     }
 
     @PutMapping("")
-    public ResponseEntity<ImcModel> update(ImcPutDto imc) {
+    public ResponseEntity<ImcModel> update(@RequestBody ImcPutDto imc) {
         return ResponseEntity.status(HttpStatus.CREATED).body(imcService.update(imc));
     }
 
