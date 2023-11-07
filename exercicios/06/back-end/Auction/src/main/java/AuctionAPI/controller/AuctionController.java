@@ -23,9 +23,15 @@ public class AuctionController {
         return ResponseEntity.status(HttpStatus.CREATED).body(auctionService.save(auction));
     }
 
-    @PostMapping("/sale")
+    @PutMapping("/sale")
     public ResponseEntity<AuctionModel> sale(@RequestBody SaleDto sale) {
         return ResponseEntity.status(HttpStatus.OK).body(auctionService.sale(sale));
+    }
+
+    @DeleteMapping("")
+    public ResponseEntity<AuctionModel> delete(@RequestParam UUID id) {
+        auctionService.deleteById(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
     }
 
     @GetMapping("/all")

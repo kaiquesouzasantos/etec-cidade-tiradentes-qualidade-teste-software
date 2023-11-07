@@ -1,6 +1,7 @@
 package AuctionAPI.controller;
 
 import AuctionAPI.dto.BidDto;
+import AuctionAPI.model.AuctionModel;
 import AuctionAPI.model.BidModel;
 import AuctionAPI.service.BidService;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,12 @@ public class BidController {
     @PostMapping("")
     public ResponseEntity<BidModel> save(@RequestBody BidDto bid) {
         return ResponseEntity.status(HttpStatus.CREATED).body(bidService.save(bid));
+    }
+
+    @DeleteMapping("")
+    public ResponseEntity<AuctionModel> delete(@RequestParam UUID id) {
+        bidService.deleteById(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
     }
 
     @GetMapping("/highest")

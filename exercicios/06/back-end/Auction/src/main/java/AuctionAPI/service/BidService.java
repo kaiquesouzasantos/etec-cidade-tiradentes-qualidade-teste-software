@@ -30,6 +30,10 @@ public class BidService implements Validation<BidDto> {
         return bidRepository.save(BidMapper.toMapper(bid));
     }
 
+    public void deleteById(UUID id) {
+        bidRepository.deleteById(id);
+    }
+
     public List<BidModel> listHighestBidsByAuction(UUID auction) {
         var listHighestBids = bidRepository.findAllByAuction(auction).orElseThrow(
                 () -> new ExceptionGeneric("", "", 400)

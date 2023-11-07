@@ -1,10 +1,12 @@
 package AuctionAPI.dto;
 
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
-@Builder
+@NoArgsConstructor
+@SuperBuilder
 public class UserDto {
     private String name, email;
 }

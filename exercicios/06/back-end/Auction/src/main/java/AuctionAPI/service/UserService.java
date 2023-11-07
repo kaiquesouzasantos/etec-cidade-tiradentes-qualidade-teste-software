@@ -1,6 +1,6 @@
 package AuctionAPI.service;
 
-import AuctionAPI.component.validation.component.EmailExists;
+import AuctionAPI.component.validation.component.EmailNotExists;
 import AuctionAPI.component.validation.component.NotEmpty;
 import AuctionAPI.component.validation.component.NotNull;
 import AuctionAPI.component.validation.rule.Validation;
@@ -13,13 +13,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
 public class UserService implements Validation<UserDto> {
     private final UserRepository userRepository;
-    private final EmailExists emailExists;
+    private final EmailNotExists emailNotExists;
 
     public UserModel save(UserDto user) {
         validated(user);
@@ -27,7 +28,9 @@ public class UserService implements Validation<UserDto> {
         return userRepository.save(UserMapper.toMapper(user));
     }
 
-    // PUT
+    public void deleteById(UUID id) {
+        userRepository.deleteById(id);
+    }
 
     public List<UserModel> listAll() {
         return userRepository.findAll();
@@ -40,7 +43,7 @@ public class UserService implements Validation<UserDto> {
                 NotNull.isValid(value.getEmail()),
                 NotEmpty.isValid(value.getName()),
                 NotEmpty.isValid(value.getEmail()),
-                emailExists.isValid(value.getEmail())
+                emailNotExists.isValid(value.getEmail())
         ).allMatch(valor -> valor.equals(true));
     }
 

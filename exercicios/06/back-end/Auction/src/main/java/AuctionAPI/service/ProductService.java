@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Stream;
 
 @Service
@@ -24,6 +25,10 @@ public class ProductService implements Validation<ProductDto> {
         validated(product);
 
         return productRepository.save(ProductMapper.toMapper(product));
+    }
+
+    public void deleteById(UUID id) {
+        productRepository.deleteById(id);
     }
 
     public List<ProductModel> listAll() {

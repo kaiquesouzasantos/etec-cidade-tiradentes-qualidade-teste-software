@@ -15,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -29,6 +30,10 @@ public class AuctionService implements Validation<AuctionDto> {
         validated(auction);
 
         return auctionRepository.save(AuctionMapper.toMapper(auction));
+    }
+
+    public void deleteById(UUID id) {
+        auctionRepository.deleteById(id);
     }
 
     public AuctionModel sale(SaleDto sale) {

@@ -1,6 +1,7 @@
 package AuctionAPI.controller;
 
 import AuctionAPI.dto.UserDto;
+import AuctionAPI.model.AuctionModel;
 import AuctionAPI.model.UserModel;
 import AuctionAPI.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,6 +21,12 @@ public class UserController {
     @PostMapping("")
     public ResponseEntity<UserModel> save(@RequestBody UserDto user) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(user));
+    }
+
+    @DeleteMapping("")
+    public ResponseEntity<AuctionModel> delete(@RequestParam UUID id) {
+        userService.deleteById(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
     }
 
     @GetMapping("/all")

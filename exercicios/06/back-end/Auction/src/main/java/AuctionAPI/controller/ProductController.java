@@ -1,6 +1,7 @@
 package AuctionAPI.controller;
 
 import AuctionAPI.dto.ProductDto;
+import AuctionAPI.model.AuctionModel;
 import AuctionAPI.model.ProductModel;
 import AuctionAPI.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,6 +21,12 @@ public class ProductController {
     @PostMapping("")
     public ResponseEntity<ProductModel> save(@RequestBody ProductDto product) {
         return ResponseEntity.status(HttpStatus.CREATED).body(productService.save(product));
+    }
+
+    @DeleteMapping("")
+    public ResponseEntity<AuctionModel> delete(@RequestParam UUID id) {
+        productService.deleteById(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
     }
 
     @GetMapping("/all")
