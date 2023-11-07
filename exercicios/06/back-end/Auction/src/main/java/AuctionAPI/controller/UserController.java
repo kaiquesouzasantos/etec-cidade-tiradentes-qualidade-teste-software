@@ -24,7 +24,7 @@ public class UserController {
     }
 
     @DeleteMapping("")
-    public ResponseEntity<AuctionModel> delete(@RequestParam UUID id) {
+    public ResponseEntity<Void> delete(@RequestParam UUID id) {
         userService.deleteById(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
     }

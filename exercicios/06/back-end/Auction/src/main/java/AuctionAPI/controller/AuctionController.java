@@ -29,7 +29,7 @@ public class AuctionController {
     }
 
     @DeleteMapping("")
-    public ResponseEntity<AuctionModel> delete(@RequestParam UUID id) {
+    public ResponseEntity<Void> delete(@RequestParam UUID id) {
         auctionService.deleteById(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
     }
