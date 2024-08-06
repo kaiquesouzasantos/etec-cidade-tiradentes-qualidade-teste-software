@@ -1,4 +1,4 @@
-<h1 align=center>ETEC199-2023-QTS</h1>
+<h1 align=center>🌇 ETEC CIDADE TIRADENTES - QUALIDADE E TESTE DE SOFTWARE</h1>
 
 <p align="center">
   <img src="etec.png" width="500">
@@ -38,5 +38,5 @@
 ### 🔗 CONTRIBUIÇÃO
 
 ```
-$ git clone https://github.com/kaiquesouzasantos/etec199-2023-qts.git 
+$ git clone https://github.com/kaiquesouzasantos/etec-cidade-tiradentes-qualidade-teste-software.git 
 ```
